@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prodFxTest.fxml.ProdFxTestController">
+   <children>
+      <ComboBox fx:id="lprod" blendMode="EXCLUSION" onAction="#lprodList" prefWidth="150.0" />
+      <TableView fx:id="tableView" onMouseClicked="#tableViewShow" prefHeight="373.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="prodId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="prodName" prefWidth="75.0" text="NAME" />
+            <TableColumn fx:id="prodLgu" prefWidth="75.0" text="LGU" />
+            <TableColumn fx:id="prodBuyer" prefWidth="75.0" text="BUYER" />
+            <TableColumn fx:id="prodCost" prefWidth="75.0" text="COST" />
+            <TableColumn fx:id="prodPrice" prefWidth="75.0" text="PRICE" />
+            <TableColumn fx:id="prodSale" prefWidth="149.0" text="SALE" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>

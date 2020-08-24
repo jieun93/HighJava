@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+ 	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+ 	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+ 	
+<sqlMap namespace="mymember">
+ 	<select id="getAllMember" resultClass="memVo">
+ 		select * from mymember
+ 	</select>
+ 	
+ 	<insert id="insertMember" parameterClass= "memVo">
+ 		insert into mymember(mem_id, mem_name, mem_tel, mem_addr)
+ 		values(#mem_id#,#mem_name#, #mem_tel#, #mem_addr#)
+ 	</insert>
+ 	
+ 	<delete id ="deleteMember" parameterClass = "String">
+ 		delete from mymember where mem_id=#mem_id#
+ 	</delete>
+ 	
+ 	<select id="getMemberCount" parameterClass="String" resultClass="int">
+ 		select count(*) from mymember where mem_id=#mem_id#
+ 	</select>
+ 	
+ 	<update id="updateMember" parameterClass="memVo">
+ 		update mymember set mem_id = #mem_id#, mem_name = #mem_name#, mem_tel=#mem_tel#, mem_addr = #mem_addr#  
+ 	 	where mem_id=#mem_id#
+ 	</update>
+ 	
+ 	
+ 	<!--  Map 이용시 
+ 	 - parameterClass를 Map으로 설정했을 경우에는 그 Map의  key 값이 VO의 변수명처럼 사용하면 된다.
+ 	 
+ 	 - 파라미터로 가져온 값을 컬럼명에 사용할 경우에는 달러기호($)를 사용한다.
+ 	 	예) $변수명$ 또는 $키값$
+ 	 -->
+ 	
+ 	<update id="updateMember2" parameterClass="map">
+ 		update mymember 
+ 				set  $field$ = #data# <!-- map에는 수정할 key 값이 들어가야 한다/  iBatis에서는 $를 사용하면 그대로 표시해준다ㅣ -->	
+ 	    where mem_id= #memId#
+ 	</update>
+ 	
+ 	
+ 	
+ 	<select id="getSearchMember" parameterClass="map" resultClass="memVo">
+ 		select * from mymember
+ 		where $field$ like '%' || #search# || '%'
+ 	</select>
+ 	
+ 	
+ 	
+</sqlMap>

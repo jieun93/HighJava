@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="263.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.prod.fxml.ProdController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="4.0" prefWidth="200.0">
+         <children>
+            <ComboBox fx:id="lprodNm" onAction="#btnlprod" prefHeight="23.0" prefWidth="124.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </ComboBox>
+            <ComboBox fx:id="rprodNm" onAction="#btnrprod" prefWidth="150.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <TableView fx:id="tableview" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+            <TableColumn fx:id="prodId" prefWidth="77.0" text="PROD_ID" />
+          <TableColumn fx:id="prodNm" prefWidth="87.0" text="PROD_NAME" />
+          <TableColumn fx:id="prodLgu" prefWidth="75.0" text="PROD_LGU" />
+            <TableColumn fx:id="prodBuyer" prefWidth="108.0" text="PROD_BUYER" />
+            <TableColumn fx:id="prodCost" prefWidth="81.0" text="PROD_COST" />
+            <TableColumn fx:id="prodPrice" prefWidth="88.0" text="PROD_PRICE" />
+            <TableColumn fx:id="prodSale" prefWidth="81.0" text="PROD_SALE" />
+            <TableColumn fx:id="prodOutline" prefWidth="115.0" text="PROD_OUTLINE" />
+            <TableColumn fx:id="prodDetail" prefWidth="100.0" text="PROD_DETAIL" />
+        </columns>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </TableView>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>
